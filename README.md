@@ -37,8 +37,6 @@ A demo for reactive programming using Vert.x
 
 * **Oscar Garcia** - *Initial work* - [oskiegarcia](https://github.com/oskiegarcia)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 
 
 
