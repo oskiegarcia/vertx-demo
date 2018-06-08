@@ -25,7 +25,7 @@ A demo for reactive programming using Vert.x
 * java -Ddriver=Stefan -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
 * java -Ddriver=Flo -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
 * java -Ddriver=Chloe -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
-* java -Ddriver=Stan -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+* java -Ddriver=Tina -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
 
 
 * java  -jar target/ride-hailing-app-1.0.jar  run com.rider.DashboardBE -cluster
