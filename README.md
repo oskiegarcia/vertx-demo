@@ -5,7 +5,7 @@ A demo for reactive programming using Vert.x
 ![Application Architecture](https://github.com/oskiegarcia/vertx-demo/blob/master/archi.png)
 
 
-
+{code}
 ##Passenger
 java -jar target/ride-hailing-app-1.0.jar  run com.rider.PassengerProducer -cluster
 
@@ -20,3 +20,4 @@ java -Ddriver=Stan -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDrive
 
 ##Dashboard BE
 java  -jar target/ride-hailing-app-1.0.jar  run com.rider.DashboardBE -cluster
+{code}
