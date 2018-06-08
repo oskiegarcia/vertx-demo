@@ -32,6 +32,8 @@ A demo for reactive programming using Vert.x
 * npm install
 * npm start
 
+Open http://localhost:9000/
+
 
 ## Built With
 
