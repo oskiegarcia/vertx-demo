@@ -1,6 +1,9 @@
 # vertx-demo
 A demo for reactive programming using Vert.x
 
+Each JVM instance becomes part of a cluster that allows them to share data using event bus.
+In order to share data with Frontend using event bus, websocket server is created. 
+
 
 ![Application Architecture](https://github.com/oskiegarcia/vertx-demo/blob/master/archi.png)
 
