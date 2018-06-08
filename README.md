@@ -30,7 +30,7 @@ A demo for reactive programming using Vert.x
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [Npm] (https://www.npmjs.com/) - Dependency Management
+* [Npm](https://www.npmjs.com/) - Dependency Management
 
 
 ## Authors
