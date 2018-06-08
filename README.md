@@ -12,6 +12,8 @@ A demo for reactive programming using Vert.x
 
 ## Deployment of Java Backend
 
+* mvn clean package
+
 * java -jar target/ride-hailing-app-1.0.jar  run com.rider.PassengerProducer -cluster
 
 
