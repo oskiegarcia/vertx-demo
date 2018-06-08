@@ -10,7 +10,7 @@ A demo for reactive programming using Vert.x
 A demo for reactive programming using Vert.x
 
 
-## Deployment
+## Deployment of Java Backend
 
 * java -jar target/ride-hailing-app-1.0.jar  run com.rider.PassengerProducer -cluster
 
@@ -25,6 +25,10 @@ A demo for reactive programming using Vert.x
 
 * java  -jar target/ride-hailing-app-1.0.jar  run com.rider.DashboardBE -cluster
 
+## Deployment of React Frontend
+
+* npm install
+* npm start
 
 
 ## Built With
