@@ -1,7 +1,7 @@
 # vertx-demo
 A demo for reactive programming using Vert.x
 
-Each JVM instance becomes part of a cluster that allows them to share data using event bus.
+Each JVM instance becomes part of a cluster that allows it to share data using event bus.
 In order to share data with Frontend using event bus, websocket server is created in DashboardBE component. 
 
 
