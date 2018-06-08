@@ -3,3 +3,20 @@ A demo for reactive programming using Vert.x
 
 
 ![Application Architecture](https://github.com/oskiegarcia/vertx-demo/blob/master/archi.png)
+
+
+
+##Passenger
+java -jar target/ride-hailing-app-1.0.jar  run com.rider.PassengerProducer -cluster
+
+##Drivers
+java -Ddriver=Oscar -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+java -Ddriver=Herman -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+java -Ddriver=Stefan -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+java -Ddriver=Flo -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+java -Ddriver=Chloe -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+java -Ddriver=Stan -jar target/ride-hailing-app-1.0.jar  run com.rider.TaxiDriver -cluster
+
+
+##Dashboard BE
+java  -jar target/ride-hailing-app-1.0.jar  run com.rider.DashboardBE -cluster
