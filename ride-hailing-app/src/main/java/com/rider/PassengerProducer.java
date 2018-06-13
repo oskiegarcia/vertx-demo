@@ -43,5 +43,6 @@ public class PassengerProducer extends AbstractVerticle {
     public void stop() throws Exception {
         super.stop();
         System.out.println(">>>>PassengerProducer.stop");
+        System.out.printf("Number of passengers not serviced: %d\n", failedCounter.get());
     }
 }
