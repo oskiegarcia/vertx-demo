@@ -38,16 +38,19 @@ public class TaxiDriver extends AbstractVerticle {
                 occupied.set(true);
                 m.reply(String.format("%s Welcome %s", from,  m.body()) );
                 sendToDashboardBE();
+
+                //free after 5 sec, simulate passenger being dropped off
+                vertx.setTimer(5000, x ->{
+                    occupied.set(false);
+                    sendToDashboardBE();
+                });
+
             }
 
         });
 
 
-        //free after 5 sec, simulate passenger being dropped off
-        vertx.setPeriodic(5000, x -> {
-            occupied.set(false);
-            sendToDashboardBE();
-        });
+
 
 
 
