@@ -1,6 +1,7 @@
 package com.rider;
 
 import io.vertx.core.eventbus.DeliveryOptions;
+import io.vertx.core.eventbus.ReplyException;
 import io.vertx.rxjava.core.AbstractVerticle;
 import io.vertx.rxjava.core.eventbus.Message;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -28,7 +29,8 @@ public class PassengerProducer extends AbstractVerticle {
                     .retry(5)
                     .map(Message::body)
                     .subscribe(m -> System.out.printf("Received reply \"%s\"\n", m),
-                            e -> { System.out.printf("Gave up trying: %s\n",e.getMessage());
+                            e -> { int errCode = ((ReplyException)e).failureCode();
+                                   System.out.printf("Gave up trying: %d - %s\n",errCode, e.getMessage());
                                    failedCounter.incrementAndGet();
                      });
         });
