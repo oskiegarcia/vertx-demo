@@ -74,34 +74,27 @@ public class DashboardBE extends AbstractVerticle {
 
         consumer.handler(m -> {
             JsonObject data = JsonObject.mapFrom(m.body());
+
+            //create and send reply
             JsonObject reply = new JsonObject();
             reply.put("status","OK").put("uuid",data.getValue("uuid"));
-
             m.reply(reply);
-            JsonObject fromCache = drivers.get(data.getString("name"));
 
-            if (fromCache!=null){
-                //ignore older records
-                if (data.getInstant("timestamp").isAfter(fromCache.getInstant("timestamp")) ){
-                    drivers.put(data.getString("name"), data);
-                }
-            }else{
-                drivers.put(data.getString("name"), data);
-            }
+            drivers.put(data.getString("name"), data);
 
-            //send to dashboard frontend
-            //System.out.println("----------------------------");
             //five seconds from now
             Instant lastFiveSecs = new Timestamp(System.currentTimeMillis()).toInstant().minusSeconds(5);
 
-            //display filtered values
             JsonObject jsonOut = new JsonObject();
 
-            List filtered =drivers.values().stream().filter(v -> v.getInstant("timestamp").isAfter(lastFiveSecs) )
-                    .collect(Collectors.toList());
+            //get the data that were updated in the last 5 secs
+            List filtered =drivers.values().stream()
+                          .filter(v -> v.getInstant("timestamp").isAfter(lastFiveSecs) )
+                          .collect(Collectors.toList());
 
             jsonOut.put("drivers",new JsonArray(filtered));
 
+            //send to dashboard UI
             vertx.eventBus().publish(Config.DASHBOARD_UI_ADDRESS, jsonOut);
 
         });

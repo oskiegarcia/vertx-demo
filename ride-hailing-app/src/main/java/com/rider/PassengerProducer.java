@@ -22,7 +22,7 @@ public class PassengerProducer extends AbstractVerticle {
 
         DeliveryOptions deliveryOptions;
         deliveryOptions = new DeliveryOptions().setSendTimeout(5000); //5 sec
-        vertx.setPeriodic(1000, x -> {
+        vertx.setPeriodic(3000, x -> {
             int count = counter.getAndIncrement();
             vertx.eventBus()
                     .<String>rxSend(Config.PASSENGER_PRODUCER_ADDRESS, "Passenger-" + count, deliveryOptions)
